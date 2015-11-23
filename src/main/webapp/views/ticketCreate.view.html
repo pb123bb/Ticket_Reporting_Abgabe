@@ -1,0 +1,22 @@
+<section ng-controller="ticketController as ticketController">
+    <h2>Create a new Ticket</h2>
+    <div ng-show="ticketController.error" class="alert alert-danger">{{ticketController.error}}</div>
+
+    <form name="ticketForm" ng-submit="ticketController.createTicket()" role="form">
+
+        <label for="headline">headline:</label>
+        <input type="text" id="headline" name="headline"
+               min="1" max="20"
+               ng-model="model.ticket.headline"/>
+        </br>
+
+        <label for="description">description:</label>
+        <input type="text" id="description" name="description"
+               ng-model="model.ticket.description"/>
+        </br>
+
+        <button type="submit" ng-disabled="ticketForm.$invalid">Save New Ticket</button>
+
+    </form>
+
+</section>

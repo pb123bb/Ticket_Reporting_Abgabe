@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="H2 - database" uuid="cc72ff27-80e3-4640-894b-acdf72a1a532">
+    <database-info product="H2" version="1.4.188 (2015-08-01)" jdbc-version="4.0" driver-name="H2 JDBC Driver" driver-version="1.4.188 (2015-08-01)">
+      <identifier-quote-string>&quot;</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="upper" quoted-identifiers="exact"/>
+    <schema name="PUBLIC" catalog="DATABASE"/>
+    <table name="DEVELOPER" schema="PUBLIC" catalog="DATABASE" type="TABLE">
+      <column name="ID" sqlType="INTEGER" precision="10" scale="0" nullable="false" jdbcType="4" def="KE5FWFQgVkFMVUUgRk9SIFBVQkxJQy5TWVNURU1fU0VRVUVOQ0VfMkE5REU3NzVfOEU4MV80MzM0X0I4RURfNjczNzU5N0U2ODAyKQ==" autoIncrement="true"/>
+      <column name="EMAIL" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="NAME" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="PASSWORD" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="USERNAME" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="CONSTRAINT_A" columns="ID"/>
+    </table>
+    <table name="TICKET" schema="PUBLIC" catalog="DATABASE" type="TABLE">
+      <column name="TICKETID" sqlType="INTEGER" precision="10" scale="0" nullable="false" jdbcType="4" def="KE5FWFQgVkFMVUUgRk9SIFBVQkxJQy5TWVNURU1fU0VRVUVOQ0VfQjhGMDlBREJfRDUwN180RDlFX0I0RUFfRTJDODVERkM0NzZFKQ==" autoIncrement="true"/>
+      <column name="AUTHOR" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="CREATED" sqlType="TIMESTAMP" precision="23" scale="10" nullable="false" jdbcType="93"/>
+      <column name="DESCRIPTION" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="EDITABLE" sqlType="BOOLEAN" precision="1" scale="0" nullable="true" jdbcType="16"/>
+      <column name="HEADLINE" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="CONSTRAINT_9" columns="TICKETID"/>
+      <exported-key name="FK_MD5BX1ELPJR50C0A3E5FXQCEU" table="TICKET_LISTOFSTATES" schema="PUBLIC" catalog="DATABASE" columns="TICKET_TICKETID"/>
+    </table>
+    <table name="TICKET_LISTOFSTATES" schema="PUBLIC" catalog="DATABASE" type="TABLE">
+      <column name="TICKET_TICKETID" sqlType="INTEGER" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="LISTOFSTATES" sqlType="VARBINARY" precision="255" scale="0" nullable="true" jdbcType="-3"/>
+      <foreign-key name="FK_MD5BX1ELPJR50C0A3E5FXQCEU" columns="TICKET_TICKETID" ref-table="TICKET" ref-schema="PUBLIC" ref-catalog="DATABASE" ref-columns="TICKETID" update-rule="1" delete-rule="1" deferrability="2"/>
+      <index name="FK_MD5BX1ELPJR50C0A3E5FXQCEU_INDEX_4" unique="false" columns="TICKET_TICKETID"/>
+    </table>
+  </data-source>
+</component>

@@ -1,0 +1,24 @@
+<section ng-controller="ticketController as ticketController">
+    <h2>Ticket Overview</h2>
+    <div ng-show="ticketController.error" class="alert alert-danger">{{ticketController.error}}</div>
+
+    <!-- Source: http://ng-table.com/#/ -->
+
+    <a href="#/ticketCreate">Create Ticket</a>
+    <a href="#/ticketAlter">Edit Ticket</a>
+
+    <table ng-table="tickets" class="table" show-filter="true">
+        <tr ng-repeat="ticket in tickets">
+            <td title="'Headline'" filter="{ headline: 'text'}" sortable="'headline'">
+                {{ticket.headline}}</td>
+            <td title="'Description'" filter="{ description: 'number'}" sortable="'description'">
+                {{ticket.description}}</td>
+            <td title="'Author'" filter="{ author: 'text'}" sortable="'author'">
+                {{ticket.author}}</td>
+            <td title="'State'" filter="{ state: 'text'}" sortable="'state'">
+                {{ticket.state}}</td>
+            <td title="'Created'" filter="{ created: 'number'}" sortable="'created'">
+                {{ticket.created}}</td>
+        </tr>
+    </table>
+</section>

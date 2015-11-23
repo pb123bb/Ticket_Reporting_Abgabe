@@ -1,0 +1,26 @@
+<section ng-controller="developerController as developerController">
+    <h1>Welcome to Ticket Reporting System</h1>
+    <h2>Login</h2>
+    <div ng-show="model.error" class="alert alert-danger">{{model.error}}</div>
+
+    <form name="loginForm" ng-submit="developerController.loginDeveloper()" role="form">
+
+        <label for="username">username:</label>
+        <input type="text" id="username" name="username"
+               ng-model="model.developer.username"/>
+
+        <label for="password">password:</label>
+        <input type="text" id="password" name="password"
+               min="1" max="20"
+               ng-model="model.developer.password"/>
+
+
+        <label for="email">email:</label>
+        <input type="text" id="email" name="email"
+               ng-model="model.developer.email"/>
+
+        <button type="submit" ng-disabled="loginForm.$invalid">Login</button>
+        <a href="#/register">Register</a>
+    </form>
+
+</section>

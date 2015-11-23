@@ -1,0 +1,28 @@
+<section ng-controller="ticketController as ticketController">
+    <h2>Alter a Ticket</h2>
+    <div ng-show="ticketController.error" class="alert alert-danger">{{ticketController.error}}</div>
+
+    <form name="ticketForm" ng-submit="ticketController.alterTicket(headline, description, newStage)" role="form">
+
+        <label for="headline">headline:</label>
+        <input type="text" id="headline" name="headline"
+               min="1" max="20"
+               ng-model="model.ticket.headline"/>
+        </br>
+
+        <label for="description">description:</label>
+        <input type="text" id="description" name="description"
+               ng-model="model.ticket.description"/>
+        </br>
+
+        <label for="newStage">newStage:</label>
+        <input type="text" id="newStage" name="newStage"
+               ng-model="model.ticket.newStage"/>
+        </br>
+
+
+        <input type="submit" ng-disabled="ticketForm.$invalid" value="Alter Ticket">
+
+    </form>
+
+</section>
